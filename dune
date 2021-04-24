@@ -1,0 +1,12 @@
+(executable
+    (name main)
+    (libraries z3)
+    (modules_without_implementation expr)
+)
+
+(ocamllex lexer)
+(menhir (modules parser))
+
+(env
+  (dev
+    (flags (:standard -warn-error -A))))
